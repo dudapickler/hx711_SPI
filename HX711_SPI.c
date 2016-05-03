@@ -6,7 +6,7 @@
 
 #define N_SAMPLES	50
 #define SPREAD		1
-
+#define SCALE          1// calibration parameter
 
 int main(void) {
 	spi_t spi;
@@ -14,14 +14,13 @@ int main(void) {
 	uint8_t buf[1] = {0x00};
 	uint8_t buf0[1];
 	int8_t buf2[7];
-	uint8_t buf1[7] = {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xA8};
+	uint8_t buf1[7] = {0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0xaa, 0x80}; // To change the gain to 64, change the last byte(0x80) to (0xA8) or 32 => (0xA0)
 	char buffer [8];
 	unsigned char byte;
 	int32_t desired_bits;
 	int i, j;
 	int size = 6;
 	int32_t offset;
-    	int scale = -142; //-142;
 	int nsamples=N_SAMPLES;
 	long samples[nsamples];
 	float spread_percent = SPREAD / 100.0 /2.0;
