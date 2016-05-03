@@ -1,5 +1,5 @@
 # hx711_SPI
-HX711 weight scalise interface with Raspberry PI using SPI communication
+HX711 weight scale interface with Raspberry PI using SPI communication
 
 To use this code, you need to install the c-periphery library (https://github.com/vsergeev/c-periphery).
 To compile the code, put the code into c-periphery folder and compile as gcc HX711_SPI.c -I /src periphery.a -o spi
