@@ -4,9 +4,9 @@ HX711 weight scale interface with Raspberry PI using SPI communication
 To use this code, you need to install the c-periphery library (https://github.com/vsergeev/c-periphery).
 To compile the code, put the code into c-periphery folder and compile as gcc HX711_SPI.c -I /src periphery.a -o spi
 
-Also you need to activate SPI on your raspberry, this tutorial show how: https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial
+Also you need to activate SPI on your raspberry, this tutorial show how to make it: https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial
 
-To describe how to connect the pins, I'll be based on this two images:
+To describe how to connect the pins, I'll be based on these two images:
 
 Raspberry: http://www.instructables.com/files/orig/FN1/YEKZ/HN824U1E/FN1YEKZHN824U1E.jpg
 
