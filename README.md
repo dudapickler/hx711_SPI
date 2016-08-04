@@ -6,7 +6,7 @@ To compile the code, put the code into c-periphery folder and compile as gcc HX7
 
 Also you need to activate SPI on your raspberry, this tutorial show how to make it: https://learn.sparkfun.com/tutorials/raspberry-pi-spi-and-i2c-tutorial
 
-To describe how to connect the pins, I'll be based on these two images:
+These two images describe how to connect the pins:
 
 Raspberry: http://www.instructables.com/files/orig/FN1/YEKZ/HN824U1E/FN1YEKZHN824U1E.jpg
 
@@ -56,6 +56,5 @@ and the direction the sensors deflect from zero state
 
 The digital interface to the HX711 is a proprietary SPI-like interface that uses a clock (SCK) and data (DOUT) line.
 Unfortunately, it needs at least 25 clock pulses, but the SPI hardware is only capable of doing in increments of 8-bits so I wrote a function to bit-bang the interface.
-I opted to use the MOSI data line from SPI peripheral to generate a clock pulse by writing the value “0xAA”, which will go high 4 times each byte, so we need 6 bytes of
-to achieve 24 pulses, after I send one byte to set the gain, which will be (0x80) for 124, 0xA8 for 64 and 0xA0 for 32!
+I opted to use the MOSI data line from SPI peripheral to generate a clock pulse by writing the value “0xAA”, which will go high 4 times each byte, so we need 6 bytes to achieve 24 pulses, then is sent one byte to set the gain, which will be (0x80) for 124, 0xA8 for 64 and 0xA0 for 32!
 
